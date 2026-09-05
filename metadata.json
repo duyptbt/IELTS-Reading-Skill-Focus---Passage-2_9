@@ -1,0 +1,8 @@
+{
+  "name": "IELTS Reading - Measures to combat infectious disease in tsarist Russia",
+  "description": "IELTS Reading Practice & Test platform for Passage 2 (Measures to combat infectious disease in tsarist Russia) with Practice Mode, 20-minute Test Mode, interactive highlighter, collapsible notes, and full explanations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
