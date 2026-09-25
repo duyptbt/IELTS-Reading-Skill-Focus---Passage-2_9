@@ -72,27 +72,34 @@ export interface LanguageItem {
   phonetic?: string;
   bandLevel: 'Band 7.0' | 'Band 7.5' | 'Band 8.0' | 'Band 8.5+';
   definition: string;
+  definitionVi?: string;
   passageQuote: string;
   paragraphRef: 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G';
   collocations: string[];
   ieltsTip: string;
+  ieltsTipVi?: string;
   category: 'academic-vocab' | 'collocation' | 'idiomatic-phrase' | 'environmental-econ';
 }
 
 export interface GrammarStructureItem {
   id: string;
   title: string;
+  titleVi?: string;
   structurePattern: string;
   passageExample: string;
   paragraphRef: 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G';
   simplifiedParaphrase: string;
+  simplifiedParaphraseVi?: string;
   ieltsReadingFunction: string;
+  ieltsReadingFunctionVi?: string;
   practiceTip: string;
+  practiceTipVi?: string;
 }
 
 export interface ParaphraseTaskItem {
   id: string;
   questionOrHeading: string;
+  questionOrHeadingVi?: string;
   sourceType: 'Heading' | 'Multiple Choice' | 'Sentence Completion';
   questionRef: string;
   passageOriginal: string;
@@ -100,29 +107,95 @@ export interface ParaphraseTaskItem {
   options: {
     id: string;
     text: string;
+    textVi?: string;
     isCorrect: boolean;
   }[];
   explanation: string;
+  explanationVi?: string;
 }
 
 export interface CollocationQuizItem {
   id: string;
   sentenceWithBlank: string;
+  sentenceWithBlankVi?: string;
   targetCollocation: string;
   options: string[];
   correctAnswer: string;
   paragraphRef?: 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G';
   explanation: string;
+  explanationVi?: string;
 }
 
 export interface SentenceScrambleItem {
   id: string;
   title: string;
+  titleVi?: string;
   grammarNote: string;
+  grammarNoteVi?: string;
   paragraphRef: 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G';
   chunks: string[];
   correctOrder: string[];
   fullSentence: string;
+  fullSentenceVi?: string;
+}
+
+export interface SentenceCompletionCaseStudy {
+  questionNumber: number;
+  questionPrompt: string;
+  questionPromptVi: string;
+  targetAnswer: string;
+  wordCountLimit: string;
+  expectedGrammar: string;
+  expectedGrammarVi: string;
+  passageSentence: string;
+  passageSentenceVi: string;
+  paragraphRef: 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G';
+  paraphraseMap: {
+    testKeyword: string;
+    passageMatch: string;
+    note: string;
+    noteVi: string;
+  }[];
+  criticalTraps: {
+    mistake: string;
+    mistakeVi: string;
+    reason: string;
+    reasonVi: string;
+  }[];
+  band9Takeaway: string;
+  band9TakeawayVi: string;
+}
+
+export interface SentenceCompletionInsight {
+  coreRules: {
+    rule: string;
+    ruleVi: string;
+    description: string;
+    descriptionVi: string;
+    badge: string;
+  }[];
+  fourStepStrategy: {
+    step: number;
+    title: string;
+    titleVi: string;
+    summary: string;
+    summaryVi: string;
+    details: string[];
+    detailsVi: string[];
+    proTip: string;
+    proTipVi: string;
+  }[];
+  caseStudies: SentenceCompletionCaseStudy[];
+  frequentTraps: {
+    trapTitle: string;
+    trapTitleVi: string;
+    trapDescription: string;
+    trapDescriptionVi: string;
+    badExample: string;
+    goodExample: string;
+    fixStrategy: string;
+    fixStrategyVi: string;
+  }[];
 }
 
 export interface AuthorStanceItem {
